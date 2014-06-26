@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 1185.0, 261.0, 310.0, 236.0 ],
+		"rect" : [ 1185.0, 261.0, 347.0, 233.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -48,10 +48,10 @@
 					"id" : "obj-114",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "int", "bang", "bang" ],
-					"patching_rect" : [ 131.75, 149.0, 154.0, 20.0 ],
-					"text" : "rr_matrix_control 1024 500"
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 131.75, 149.0, 172.0, 20.0 ],
+					"text" : "rr_matrix_control 1024 500 #1"
 				}
 
 			}
@@ -105,15 +105,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-114", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-59", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -133,21 +124,28 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "rr_vine_movie.maxpat",
-				"bootpath" : "/Users/kojiroumezaki/Desktop/rr_download_vines",
+				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "rr_matrix.maxpat",
-				"bootpath" : "/Users/kojiroumezaki/Desktop/rr_download_vines",
+				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "rr_matrix_control.maxpat",
-				"bootpath" : "/Users/kojiroumezaki/Desktop/rr_download_vines",
+				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "rr_zone_select.maxpat",
+				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
