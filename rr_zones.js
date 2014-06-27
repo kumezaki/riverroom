@@ -26,10 +26,10 @@ function loadbang()
 		gClipLoc_X[i] = -1;
 }
 
-function set_zone_status(z,v)
+function set_zone_status(z,s)
 {
-	post("set_zone_status",z,v,"\n");
-	gZoneStatus[z] = v;
+	post("set_zone_status",z,s,"\n");
+	gZoneStatus[z] = s;
 	
 	gCurZone = z;
 	messnamed("get_clip_loc_x","bang");
@@ -40,6 +40,7 @@ function set_clip_loc_x(c,x)
 	if (in_zone(x,gCurZone))
 	{
 		post("clip",c,x,"in zone",gCurZone,"\n");
+		messnamed("clip_zone_status",c,gZoneStatus[gCurZone]);
 	}
 }
 
