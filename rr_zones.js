@@ -40,11 +40,22 @@ function set_clip_loc_x(c,x)
 	if (in_zone(x,gCurZone))
 	{
 		post("clip",c,x,"in zone",gCurZone,"\n");
-		messnamed("clip_zone_status",c,gZoneStatus[gCurZone]);
+		send_clip_zone_status(c,gZoneStatus[gCurZone]);
 	}
+}
+
+function set_clip_zone(c,z)
+{
+	post("clip",c,"in zone",z,"\n");
+	send_clip_zone_status(c,gZoneStatus[z]);
 }
 
 function in_zone(x,z)
 {
 	return (x >= gZoneXMin[z]) && (x < gZoneXMax[z]);
+}
+
+function send_clip_zone_status(c,s)
+{
+	messnamed("clip_zone_status",c,s);
 }
