@@ -31,26 +31,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"id" : "obj-2",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "int", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 176.75, 181.0, 50.0, 20.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
 					"id" : "obj-114",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 131.75, 149.0, 172.0, 20.0 ],
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"patching_rect" : [ 95.75, 149.0, 172.0, 20.0 ],
 					"text" : "rr_matrix_control 1024 500 #1"
 				}
 
@@ -61,7 +47,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-59",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 0,
 					"patching_rect" : [ 59.75, 183.0, 91.0, 20.0 ],
 					"text" : "rr_matrix 80 60"
@@ -105,6 +91,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-59", 2 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-114", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-59", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -138,13 +133,6 @@
 			}
 , 			{
 				"name" : "rr_matrix_control.maxpat",
-				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "rr_zone_select.maxpat",
 				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
