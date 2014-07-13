@@ -30,6 +30,12 @@ function loadbang()
 	gCurZone = -1;
 }
 
+function bang()
+{
+	for (i = 0; i < gNumClips; i++)
+		messnamed(i+"_movie_bang","bang");
+}
+
 function set_num_zones(n)
 {
 	post("set_num_zones",n,"\n");

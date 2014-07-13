@@ -1322,8 +1322,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 458.0, 161.0, 85.0, 20.0 ],
-					"text" : "s movie_bang"
+					"patching_rect" : [ 458.0, 161.0, 97.0, 20.0 ],
+					"text" : "s rr_zones_msg"
 				}
 
 			}

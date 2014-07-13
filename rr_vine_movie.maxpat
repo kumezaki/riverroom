@@ -47,8 +47,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 27.0, 153.0, 83.0, 20.0 ],
-					"text" : "r movie_bang"
+					"patching_rect" : [ 6.0, 153.0, 103.0, 20.0 ],
+					"text" : "r #1_movie_bang"
 				}
 
 			}
@@ -251,8 +251,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [  ]
+ ]
 	}
 
 }
