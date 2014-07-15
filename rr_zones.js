@@ -11,8 +11,10 @@ var gCurZone = -1;
 var gWindowWidth = 1024;
 var gZoneWidth = gWindowWidth / gNumZones;
 
-var gNumClips = 10;
+var gNumClips = 0;
 var gClipLoc_X = [];
+
+var gStoppedClips = [];
 
 function loadbang()
 {
@@ -27,13 +29,15 @@ function loadbang()
 	for (i = 0; i < gNumClips; i++)
 		gClipLoc_X[i] = -1;
 
+	reset_clip_z_values();
+	
 	gCurZone = -1;
 }
 
 function bang()
 {
-	for (i = 0; i < gNumClips; i++)
-		messnamed(i+"_movie_bang","bang");
+	for (i = gNumClips-1; i >= 0; i--) /* in reverse order so that lowest clip w/ Z value is displayed on top */
+		messnamed(gClip_ZValue[i][1]+"_movie_bang","bang");
 }
 
 function set_num_zones(n)
@@ -86,8 +90,7 @@ function update_zone(c,z)
 		if (gZoneClip[z] < 0)
 		{
 			gZoneClip[z] = c;
-			send_clip_zone_status(c,1);
-			post("clip",c,"in zone",z,"stopped\n");
+			change_clip_zone_status(z,c,1);
 		}
 		else
 			post("clip",gZoneClip[z],"in zone",z,"already stopped\n");
@@ -97,12 +100,58 @@ function update_zone(c,z)
 		if (gZoneClip[z] == c)
 		{
 			gZoneClip[z] = -1;
-			send_clip_zone_status(c,0); /* don't send if it's already 0 */
+			change_clip_zone_status(z,c,0); /* don't send if it's already 0 */
 		}
 	}
 }
 
-function send_clip_zone_status(c,s)
+function change_clip_zone_status(z,c,s)
 {
 	messnamed("clip_zone_status",c,s);
+
+	clip_change(c,s);
+
+	post("clip",c,"in zone",z,s?"stopped\n":"started\n");
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+var gClip_ZValue = [];
+
+function reset_clip_z_values()
+{
+	delete gClip_ZValue;
+	
+	for (i = 0; i < gNumClips; i++)
+		gClip_ZValue[i] = [i,i]; /* [z-value, clip_num] */
+
+	display_array(gClip_ZValue);
+}
+
+function clip_change(clip_num,status)
+{
+	/* search for clip number and assign new z value here */
+	for (i = 0; i < gNumClips; i++)
+		if (gClip_ZValue[i][1]==clip_num)
+		{
+			gClip_ZValue[i][0] = status ? -1 : gNumClips;
+			break;
+		}
+	display_array(gClip_ZValue);
+	
+	/* sort the array based on temporary z-values */
+	gClip_ZValue.sort();
+	display_array(gClip_ZValue);
+
+	/* reassign z-values */
+	for (i = 0; i < gNumClips; i++)
+		gClip_ZValue[i][0] = i;
+	display_array(gClip_ZValue);
+}
+
+function display_array(gClip_ZValue)
+{
+	for (i = 0; i < gNumClips; i++)
+		post("("+gClip_ZValue[i]+")");
+	post("\n");
 }
