@@ -37,7 +37,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
 					"patching_rect" : [ 95.75, 149.0, 172.0, 20.0 ],
-					"text" : "rr_matrix_control 1024 500 #1"
+					"text" : "rr_matrix_control 1344 500 #1"
 				}
 
 			}

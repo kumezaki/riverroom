@@ -8,7 +8,12 @@ var gZoneXMax = [];
 
 var gCurZone = -1;
 
+var clip_w = 80;
+var clip_zoom_max = 2.0;
+var clip_zoom_w = clip_zoom_max * clip_w;
+
 var gWindowWidth = 1024;
+var gWindowOffset = clip_zoom_w;
 var gZoneWidth = gWindowWidth / gNumZones;
 
 var gNumClips = 0;
@@ -22,8 +27,9 @@ function loadbang()
 	{
 		gZoneStatus[i] = 0;
 		gZoneClip[i] = -1;
-		gZoneXMin[i] = i * gZoneWidth;
+		gZoneXMin[i] = i * gZoneWidth + gWindowOffset;
 		gZoneXMax[i] = gZoneXMin[i] + gZoneWidth;
+		post("zone",i,gZoneXMin[i],gZoneXMax[i],"\n");
 	}
 	
 	for (i = 0; i < gNumClips; i++)
@@ -67,14 +73,14 @@ function set_clip_loc_x(c,x) /* called after sending bang to get_clip_loc_x in s
 {
 	if (in_zone(x,gCurZone))
 	{
-		post("set_clip_loc_x: clip",c,x,"in zone",gCurZone,"\n");
+		post("set_clip_loc_x: clip",c,x,"in zone",gCurZone,gZoneXMin[gCurZone],gZoneXMax[gCurZone],"\n");
 		update_zone(c,gCurZone);
 	}
 }
 
 function set_clip_zone(c,z) /* called when clip enters a new zone */
 {
-	post("set_clip_zone: clip",c,"in zone",z,"\n");
+	post("set_clip_zone: clip",c,"in zone",z,gZoneXMin[z],gZoneXMax[z],"\n");
 	update_zone(c,z);
 }
 
