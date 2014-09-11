@@ -36,8 +36,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
-					"patching_rect" : [ 95.75, 149.0, 172.0, 20.0 ],
-					"text" : "rr_matrix_control 1344 500 #1"
+					"patching_rect" : [ 95.75, 149.0, 245.0, 20.0 ],
+					"text" : "rr_matrix_control 1344 1024 500 160 120 #1"
 				}
 
 			}
@@ -49,8 +49,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 59.75, 183.0, 91.0, 20.0 ],
-					"text" : "rr_matrix 80 60"
+					"patching_rect" : [ 59.75, 183.0, 58.0, 20.0 ],
+					"text" : "rr_matrix"
 				}
 
 			}

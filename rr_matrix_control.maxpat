@@ -36,8 +36,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 748.5, 608.875, 41.0, 20.0 ],
-					"text" : "+ 120"
+					"patching_rect" : [ 748.5, 608.875, 34.0, 20.0 ],
+					"text" : "+ #5"
 				}
 
 			}
@@ -50,8 +50,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 60.0, 602.375, 36.0, 20.0 ],
-					"text" : "- 160"
+					"patching_rect" : [ 60.0, 602.375, 32.5, 20.0 ],
+					"text" : "- #4"
 				}
 
 			}
@@ -64,8 +64,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 60.0, 629.5, 70.0, 20.0 ],
-					"text" : "split 0 1024"
+					"patching_rect" : [ 60.0, 629.5, 59.0, 20.0 ],
+					"text" : "split 0 #2"
 				}
 
 			}
@@ -136,8 +136,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 74.0, 500.125, 90.0, 20.0 ],
-					"text" : "loadmess 1024"
+					"patching_rect" : [ 74.0, 500.125, 79.0, 20.0 ],
+					"text" : "loadmess #2"
 				}
 
 			}
@@ -273,8 +273,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 60.0, 755.0, 115.0, 18.0 ],
-					"text" : "set_clip_zone #3 $1"
+					"patching_rect" : [ 60.0, 755.0, 117.0, 18.0 ],
+					"text" : "set_clip_zone #6 $1"
 				}
 
 			}
@@ -370,7 +370,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 750.75, 53.5, 55.0, 20.0 ],
-					"text" : "route #3"
+					"text" : "route #6"
 				}
 
 			}
@@ -425,8 +425,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 748.5, 581.125, 74.0, 20.0 ],
-					"text" : "random #2"
+					"patching_rect" : [ 748.5, 581.125, 68.0, 20.0 ],
+					"text" : "random #3"
 				}
 
 			}
@@ -783,8 +783,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 226.0, 755.0, 146.0, 18.0 ],
-					"text" : "set_clip_loc_x #3 $1"
+					"patching_rect" : [ 226.0, 755.0, 119.0, 18.0 ],
+					"text" : "set_clip_loc_x #6 $1"
 				}
 
 			}
@@ -1488,7 +1488,8 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [  ]
 	}
 
 }
