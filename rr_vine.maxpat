@@ -125,6 +125,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "rr_clip_audio.maxpat",
+				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "rr_matrix.maxpat",
 				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
 				"patcherrelativepath" : ".",
@@ -137,6 +144,10 @@
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "munger~.mxo",
+				"type" : "iLaX"
 			}
  ]
 	}

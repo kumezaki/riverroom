@@ -36,8 +36,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 232.0, 323.0, 79.0, 20.0 ],
-					"text" : "rr_clip_audio"
+					"patching_rect" : [ 232.0, 323.0, 96.0, 20.0 ],
+					"text" : "rr_clip_audio #1"
 				}
 
 			}
