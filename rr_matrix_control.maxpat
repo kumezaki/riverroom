@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 4.0, 44.0, 1436.0, 810.0 ],
+		"rect" : [ 1657.0, -52.0, 1436.0, 810.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -28,6 +28,19 @@
 		"digest" : "",
 		"tags" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 630.5, 654.0, 87.0, 20.0 ],
+					"text" : "s #1_relativeX"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -1881,10 +1894,19 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-18", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 640.0, 654.5, 812.5, 654.5, 812.5, 201.5, 646.0, 201.5 ],
+					"midpoints" : [ 640.0, 647.5, 812.5, 647.5, 812.5, 201.5, 646.0, 201.5 ],
 					"source" : [ "obj-62", 0 ]
 				}
 
@@ -2143,8 +2165,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [  ]
+ ]
 	}
 
 }
