@@ -4,11 +4,11 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 9,
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 1185.0, 261.0, 347.0, 233.0 ],
+		"rect" : [ 942.0, 269.0, 347.0, 233.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,8 +49,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 59.75, 183.0, 58.0, 20.0 ],
-					"text" : "rr_matrix"
+					"patching_rect" : [ 59.75, 183.0, 75.0, 20.0 ],
+					"text" : "rr_matrix #1"
 				}
 
 			}
@@ -74,7 +74,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 59.75, 32.0, 119.0, 20.0 ],
+					"patching_rect" : [ 59.75, 32.0, 137.0, 20.0 ],
 					"text" : "rr_vine_movie #1 #2"
 				}
 
@@ -115,39 +115,6 @@
 					"source" : [ "obj-12", 0 ]
 				}
 
-			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "rr_vine_movie.maxpat",
-				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "rr_clip_audio.maxpat",
-				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "rr_matrix.maxpat",
-				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "rr_matrix_control.maxpat",
-				"bootpath" : "/Users/kojiroumezaki/Desktop/riverroom",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "munger~.mxo",
-				"type" : "iLaX"
 			}
  ]
 	}
