@@ -4,11 +4,11 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 10,
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 0.0, 44.0, 1286.0, 882.0 ],
+		"rect" : [ 0.0, 45.0, 1286.0, 882.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -355,8 +355,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 479.407471, 62.934448, 66.342529, 20.0 ],
-					"text" : "Far Threst"
+					"patching_rect" : [ 479.407471, 62.934448, 81.342529, 20.0 ],
+					"text" : "Far Thresh"
 				}
 
 			}
