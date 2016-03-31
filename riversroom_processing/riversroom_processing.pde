@@ -2,8 +2,7 @@
 
 import processing.video.*;
 
-String video1 = "./sumidagawa_00001.mp4";
-String video2 = "./sumidagawa_00002.mp4";
+String[] video = { "./sumidagawa_00001.mp4", "./sumidagawa_00002.mp4" };
 float backgroundColor = 0;
 float video1X = 0;
 float change1X = 0.75;
@@ -20,9 +19,9 @@ void setup() {
   fullScreen(); 
   frameRate(30);
   background(0);
-  mov1 = new Movie(this, video1);
+  mov1 = new Movie(this, video[0]);
   mov1.loop();
-  mov2 = new Movie(this, video2);
+  mov2 = new Movie(this, video[1]);
   mov2.loop();
   
 }
