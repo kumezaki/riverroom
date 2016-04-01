@@ -12,9 +12,20 @@ float change2X = 1.5;
 Movie mov1;
 Movie mov2;
 
+void video_filenames() // this just displays the filenames
+{
+  for (int i = 0; i < 10; i++) // hardwired for 10 videos right now
+  {
+    String filenumber = String.format("%05d", i); // this formats integers forcing 5 digits with leading 0's if needed
+    String filename = "./"+"sumidagawa_"+filenumber+".mp4";
+    println(filename);
+  }
+}
+
 void setup() {
 
   println(dataPath(""));
+  video_filenames();
 
   fullScreen(); 
   frameRate(30);
