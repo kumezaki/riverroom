@@ -2,19 +2,18 @@
 
 import processing.video.*;
 
-String[] video = { "./sumidagawa_00001.mp4", "./sumidagawa_00002.mp4" };
+String[] video = { "./sumidagawa_00000.mp4", "./sumidagawa_00001.mp4", "./sumidagawa_00002.mp4", "./sumidagawa_00003.mp4"};
 float backgroundColor = 0;
-float video1X = 0;
-float change1X = 0.75;
-float video2X = 0;
-float change2X = 1.5;
+float[] videoX = new float[4];
+float[] changeX = new float[4];
+float[] videoY = new float[4];
 
-Movie mov1;
-Movie mov2;
+Movie[] movies = new Movie[4];
+
 
 void video_filenames() // this just displays the filenames
 {
-  for (int i = 0; i < 10; i++) // hardwired for 10 videos right now
+  for (int i = 0; i < video.length; i++) // hardwired for 10 videos right now
   {
     String filenumber = String.format("%05d", i); // this formats integers forcing 5 digits with leading 0's if needed
     String filename = "./"+"sumidagawa_"+filenumber+".mp4";
@@ -22,36 +21,71 @@ void video_filenames() // this just displays the filenames
   }
 }
 
-void setup() {
-
-  println(dataPath(""));
-  video_filenames();
-
-  fullScreen(); 
-  frameRate(30);
-  background(0);
-  mov1 = new Movie(this, video[0]);
-  mov1.loop();
-  mov2 = new Movie(this, video[1]);
-  mov2.loop();
-  
-}
-
-void movieEvent(Movie m) {
-  
-  if (m == mov1) {
-    mov1.read();
-  } else if (m == mov2) {
-    mov2.read();
+void videoY_value()
+{
+  for (int i = 0; i < videoY.length; i ++)
+  {
+    videoY[i] = random(1,6);
   }
 }
 
-void draw() {
+void videoX_value()
+{
+  for (int i = 0; i < videoX.length; i ++)
+  {
+    videoX[i] = 0;
+  }
+}
   
+void changeX_value()
+{
+  for (int i = 0; i < changeX.length; i ++)
+  {
+    changeX[i] = random(0.5,5);
+  }
+}
+
+void setup() {
+
+  println(dataPath(""));
+  for (int i = 0; i < changeX.length; i++) //Prints list of scrolling speeds
+  {
+  println("changeX-" + changeX[i]);
+  }
+  for (int i = 0; i < videoY.length; i++) //Prints list of video Y postiions
+  {
+  println("changeY-" + videoY[i]);
+  }
+
+  video_filenames();
+  changeX_value();
+  videoY_value();
+  videoX_value();
+  
+  fullScreen(); 
+  frameRate(30);
+  background(0);
+  
+  for (int i = 0; i < movies.length; i++)
+  {
+  movies[i] = new Movie(this, video[i]);
+  movies[i].loop();
+  }
+  
+}
+
+void movieEvent(Movie movies) 
+{ 
+ movies.read();
+}
+
+void draw() {  
   background(backgroundColor);
-  image(mov1, video1X, displayHeight/6, 240, 240);
-  image(mov2, video2X, displayHeight/1.75, 240, 240);
   
-  video1X = video1X + change1X; //moves video along x axis
-  video2X = video2X + change2X; //moves video along x axis
+  for (int i = 0; i < movies.length; i++)
+  {
+    image(movies[i], videoX[i], displayHeight/videoY[i], 240, 240);  
+    videoX[i] = videoX[i] + changeX[i];
+   }
+  
 }
