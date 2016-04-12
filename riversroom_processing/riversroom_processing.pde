@@ -9,6 +9,7 @@ float Ymax = 6.0; //maximum initial Y value
 float Cmin = 0.5; // minimum scroll speed
 float Cmax = 5.0; // maximum scroll speed
 
+// the next task in here to create a data structure or class that contains all of these variables/properties
 String[] video = new String[numMovies]; 
 float[] videoX = new float[numMovies]; 
 float[] initY = new float[numMovies];
