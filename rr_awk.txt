@@ -1,0 +1,14 @@
+BEGIN {
+}
+
+{
+	cmd = "curl \"https://api.vineapp.com/timelines/tags/"$0"\" > download_json.txt";
+	system(cmd);
+	cmd = "php rr_download.php "$0;
+	system(cmd);
+	cmd = "rm -f download_json.txt";
+	system(cmd);
+}
+
+END {
+}
