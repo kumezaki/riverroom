@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 995.0, 783.0 ],
+		"rect" : [ 113.0, 79.0, 618.0, 783.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,10 +42,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 316.166687, 553.0, 54.0, 22.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 316.166687, 553.0, 64.0, 22.0 ],
 					"style" : "",
-					"text" : "rr_delay"
+					"text" : "rr_delay 0"
 				}
 
 			}
@@ -976,8 +976,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1109,6 +1109,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-5",
@@ -1132,7 +1133,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 394.0, 337.5, 315.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r0_texture_snd_msg open mississippi_00000.mp4.aif"
+									"text" : ";\r2_texture_snd_msg open varanasi_00002.mp4.aif"
 								}
 
 							}
@@ -1304,7 +1305,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 353.5, 157.5, 315.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r0_multiple_msg 0"
+									"text" : ";\r0_multiple_msg 1"
 								}
 
 							}
@@ -1357,7 +1358,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 33.0, 337.5, 309.0, 49.0 ],
 									"style" : "",
-									"text" : ";\r0_texture_mov_msg asyncread mississippi_00000.mp4.mov"
+									"text" : ";\r2_texture_mov_msg asyncread varanasi_00002.mp4.mov"
 								}
 
 							}
@@ -1622,8 +1623,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1679,10 +1680,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 18.0, 553.0, 54.0, 22.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 18.0, 553.0, 64.0, 22.0 ],
 					"style" : "",
-					"text" : "rr_delay"
+					"text" : "rr_delay 1"
 				}
 
 			}
@@ -1758,7 +1759,7 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 601.5, 579.0, 136.0, 48.0 ],
-					"presentation_rect" : [ 30.0, 30.0, 50.0, 48.0 ],
+					"presentation_rect" : [ 30.0, 30.0, 50.0, 34.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~[1]",
@@ -2495,8 +2496,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

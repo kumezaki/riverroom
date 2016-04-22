@@ -69,7 +69,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 430.0, 148.0, 83.0, 22.0 ],
+					"patching_rect" : [ 445.0, 148.0, 83.0, 22.0 ],
 					"style" : "",
 					"text" : "color 1 1 1 $1"
 				}
@@ -134,9 +134,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 285.0, 269.0, 226.0, 22.0 ],
+					"patching_rect" : [ 285.0, 269.0, 216.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.gl.text rr_text @fontsize 60 @align 1"
+					"text" : "jit.gl.text rr_text @fontsize 24 @align 1"
 				}
 
 			}
@@ -226,8 +226,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
