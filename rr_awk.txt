@@ -1,7 +1,15 @@
 BEGIN {
+	while (getline < "./current_tags.txt")
+	{
+		print $0;
+		a[i++] = $0;
+	}
 }
 
 {
+	for (i in a)
+		if (tolower(a[i]) == tolower($0)) { print "SKIPPING "$0; next; }
+
 	cmd = "curl \"https://api.vineapp.com/timelines/tags/"$0"\" > download_json.txt";
 	system(cmd);
 	cmd = "php rr_download.php "$0;

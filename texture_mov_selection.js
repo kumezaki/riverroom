@@ -48,12 +48,17 @@ function display_sub_window()
 		m = a[tag] > m ? a[tag] : m;
 
 	// display tags
+	f = new File("current_tags.txt","write");
+	f.open();
+	f.eof = 0;
 	pos = 0;
 	for (tag in a)
 	{
 		post("DISPLAY",pos,tag,a[tag],"\n");
 		display_tag(tag,pos++,a[tag]/m);
+		f.writeline(tag);
 	}
+	f.close();
 	
 	// display blanks, if needed (3 maximum slots)
 	for (; pos < 3; pos++)
