@@ -11,9 +11,9 @@ var search_names_textures = new Array;
 var search_name_pos;
 
 var num_movies = new Array;
-
 var movie_pos;
 
+var end;
 
 function loadbang()
 {
@@ -24,14 +24,7 @@ function display_tag(tag,pos,alpha)
 {
 	// send message to display
 	messnamed(pos+"_tagname_msg",tag,0.5-(0.5*pos),alpha);
-	post(tag,0.5-(0.5*pos),"\n");
-}
-
-function display_message(message,pos,y,alpha)
-{
-	// send message to display
-	messnamed(pos+"_tagname_msg",message,y,alpha);
-	post(message,pos,y,"\n");
+	post("Y POS:",tag,0.5-(0.5*pos),"\n");
 }
 
 function display_sub_window()
@@ -41,14 +34,14 @@ function display_sub_window()
 	for (i = 0; i < 3; i++)
 	{
 		tag = search_names_textures[i];
-		post(i,tag,"\n");
+		post("COUNT:",i,tag,"\n");
 		if (!(tag === undefined))
 			if (a[tag] === undefined)
 				a[tag] = 1;
 			else
 				a[tag]++;
 	}
-
+	
 	// get maximum count
 	m = 0;
 	for (tag in a)
@@ -58,16 +51,16 @@ function display_sub_window()
 	pos = 0;
 	for (tag in a)
 	{
-		post(pos,tag,a[tag],"\n");
+		post("DISPLAY",pos,tag,a[tag],"\n");
 		display_tag(tag,pos++,a[tag]/m);
 	}
 	
 	// display blanks, if needed (3 maximum slots)
 	for (; pos < 3; pos++)
+	{
+		post("DISPLAY",pos,"blank","\n");
 		display_tag("",pos,0.);
-
-	// display message
-//	display_message("riversroom.com",pos,-0.8,1.);
+	}
 }
 
 function update()
@@ -78,7 +71,7 @@ function update()
 	while (f.position != f.eof)
 	{
 		s = f.readline(256);
-		post(s,"\n");
+		post("UPDATE:",s,"\n");
 		a = s.split(" ");
 		if (a.length == 2)
 		{
@@ -146,4 +139,6 @@ function bang()
 	}
 
 	display_sub_window();
+	diff = num_search_names-search_name_pos;
+	post("SEARCH NAME QUEUE (write,read,diff)",num_search_names,search_name_pos,diff,"\n");
 }

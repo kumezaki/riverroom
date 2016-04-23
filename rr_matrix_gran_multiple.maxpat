@@ -43,7 +43,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 468.0, 423.0, 131.0, 22.0 ],
+					"patching_rect" : [ 468.0, 459.0, 131.0, 22.0 ],
 					"style" : "",
 					"text" : "r #1_texture_snd_msg"
 				}
@@ -62,7 +62,7 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"mode" : "basic",
-						"originallength" : [ 1466601.875, "ticks" ],
+						"originallength" : [ 1552199.875, "ticks" ],
 						"originaltempo" : 119.999992,
 						"pitchcorrection" : 0,
 						"quality" : "basic",
@@ -211,19 +211,6 @@
 					"patching_rect" : [ 280.5, 459.0, 70.0, 22.0 ],
 					"style" : "",
 					"text" : "normalize~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-93",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 577.5, 500.0, 110.0, 22.0 ],
-					"style" : "",
-					"text" : "spigot~ #1_texture"
 				}
 
 			}
@@ -613,8 +600,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -992,8 +979,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1304,8 +1291,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1365,7 +1352,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 65.0, 500.0, 80.0, 60.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
-					"size" : 7,
+					"size" : 10,
 					"style" : ""
 				}
 
@@ -1406,7 +1393,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 154.5, 500.0, 80.0, 60.0 ],
 					"setminmax" : [ -2.0, 2.0 ],
-					"size" : 7,
+					"size" : 10,
 					"style" : ""
 				}
 
@@ -1784,8 +1771,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2212,8 +2199,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
