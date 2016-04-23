@@ -2,8 +2,8 @@ autowatch = 1;
 
 outlets = 2;
 
-var texture_pos;
 var num_textures;
+var texture_pos;
 
 var num_search_names;
 var search_names = new Array;
@@ -22,9 +22,16 @@ function loadbang()
 
 function display_tag(tag,pos,alpha)
 {
-	// send message to display tag
+	// send message to display
 	messnamed(pos+"_tagname_msg",tag,0.5-(0.5*pos),alpha);
 	post(tag,0.5-(0.5*pos),"\n");
+}
+
+function display_message(message,pos,y,alpha)
+{
+	// send message to display
+	messnamed(pos+"_tagname_msg",message,y,alpha);
+	post(message,pos,y,"\n");
 }
 
 function display_sub_window()
@@ -59,30 +66,8 @@ function display_sub_window()
 	for (; pos < 3; pos++)
 		display_tag("",pos,0.);
 
-	return;
-	
-	tag_prev = "";
-
-	j = texture_pos;
-
-	k = 0;
-
-	for (i = 0; i < 3; i++)
-	{
-		tag = search_names_textures[j];
-		
-		if (!(tag === undefined) && (tag != tag_prev))
-		{
-			// send message to display tag
-			display_tag(tag,k++);
-		}
-		tag_prev = tag;
-			
-		j = --j < 0 ? (3-1) : j;
-	}
-	
-	for (; k < 3; k++)
-		display_tag("",k);
+	// display message
+//	display_message("riversroom.com",pos,-0.8,1.);
 }
 
 function update()
@@ -108,8 +93,8 @@ function update()
 	
 function reset()
 {
-	texture_pos = -1;
 	num_textures = 3;
+	texture_pos = num_textures-1;
 	
 	num_search_names = 0;
 	delete search_names;
@@ -120,13 +105,21 @@ function reset()
 	num_movies = new Array;
 
 	movie_pos = 0;
+	
+	end = 0;
+}
+
+function set_end(v)
+{
+	post("set_end",v,"received!\n");
+	end = v;
 }
 	
 function bang()
 {
 	texture_pos = ++texture_pos % num_textures;
 	
-	texture_off = search_name_pos == num_search_names;
+	texture_off = (search_name_pos == num_search_names) || end;
 
 	outlet(1,texture_pos,texture_off);
 	post(texture_pos,"texture",texture_off?"off":"on","\n");
