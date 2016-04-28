@@ -35,6 +35,9 @@ function read(filename)
 function bang()
 {
     fullMatrix.clear;
+	// this seems to result in an error, use fullMatrix for both arguments?
+	// I think the matrixcalc method expects an input matrix and then an output matrix
+	// for its arguments. riverMovie is an instance of the JitterObject class, not JitterMatrix
     riverMovie.matrixcalc(riverMovie,fullMatrix);
 	outlet(0, "jit_matrix", fullMatrix.name);
 }
