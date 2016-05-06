@@ -2,17 +2,22 @@ autowatch = 1;
 inlets = 1;
 outlets = 1;
 
-
+// KU: figure out how to go full screen
 var fullMatrix = new JitterMatrix(4,"char", 900, 900);
 var smallMatrix = new JitterMatrix(4,"char",240, 240);
-
+// KU: I think we should make 240 a variable called videoH for video height
+// KU: Do the same for videoW for video width
+ 
 var numMovies = 3; // AC: Set to the total number of .mp4s 
+
+// KU: delete all lines that are no longer necessary and commented out
 
 //var riverMovie = new JitterObject("jit.qt.movie");
 var riverMovie = new Array;
 //movie attribue values 
 //riverMovie.vol = 0;
 
+// KU: the following can become local variables in bang (or eliminated)
 var source_start = [0,0];
 var source_end = [480,480];
 var dim_start = [0,(Math.random()*(fullMatrix.dim[0]-240))]; //sets a random Y starting position for the top left corner of video
@@ -37,17 +42,21 @@ function init_float_array_random()
 
 function loadbang()
 {
+	// KU: the trickiest part is going to be reading different movie file names
+	// KU: I think what I'd like to do is read file names from a text file
+	// KU: I'll show you an example of this, but please email me to remind me to do this
   for (i = 0; i < numMovies; i++)
   {
 	riverMovie[i] = new JitterObject("jit.movie");
-	riverMovie[i].read("sumidagawa_00001.mp4");
+	riverMovie[i].read("sumidagawa_00001.mp4"); // KU: remember I changed this to .mp4
 	riverMovie[i].vol = 0.;
-	// by default in Jitter movies loop
+	// in Jitter, movies loop by default
   }
 
 	init_float_array_random();
 }
 
+// KU: is the read function still needed?
 function read(filename)
 {
 		if(arguments.length==0) { 
