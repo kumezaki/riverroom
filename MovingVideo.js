@@ -4,7 +4,7 @@ outlets = 1;
 
 var fullMatrix = new JitterMatrix(4,"char", 900, 900);
 var smallMatrix = new JitterMatrix(4,"char",240, 240);
-var riverMovie = new JitterObject("jit.qt.movie",240,240);
+var riverMovie = new JitterObject("jit.qt.movie");
 
 var source_start = [0,0];
 var source_end = [480,480];
