@@ -35,7 +35,7 @@ function bang()
 {
     fullMatrix.clear();
      
-    riverMovie.matrixcalc(fullMatrix,smallMatrix);
+    riverMovie.matrixcalc(smallMatrix,smallMatrix);
 
     fullMatrix.usesrcdim = 1;
     fullMatrix.srcdimstart = source_start;
