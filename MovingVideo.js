@@ -8,9 +8,9 @@ var riverMovie = new JitterObject("jit.qt.movie",240,240);
 
 var source_start = [0,0];
 var source_end = [480,480];
-var dim_start = [0,240];
-var dim_end = [240,480];
-var x_change = 5;
+var dim_start = [0,(Math.random()*900)]; //sets a random Y starting position for the top left corner of video
+var dim_end = [240,dim_start[1]+240]; 
+var x_change = (Math.random()*6); //sets a random scrolling speed of video 
 
 //movie attribue values 
 riverMovie.vol = 0;
@@ -47,10 +47,10 @@ function bang()
   
     fullMatrix.frommatrix(smallMatrix);
 	
-    if(dim_start[0] <= 660) 
+    if(dim_start[0] <= fullMatrix.dim[0]-240) 
     {dim_start[0] += x_change;
 	} else {dim_start[0] = 0}
-	if(dim_end[0] <= 900)	
+	if(dim_end[0] <= fullMatrix.dim[0])	
     {dim_end[0] += x_change;
 	} else{dim_end[0] = 240}
 
