@@ -8,9 +8,9 @@ var riverMovie = new JitterObject("jit.qt.movie");
 
 var source_start = [0,0];
 var source_end = [480,480];
-var dim_start = [0,(Math.random()*900)]; //sets a random Y starting position for the top left corner of video
+var dim_start = [0,(Math.random()*(fullMatrix.dim[0]-240))]; //sets a random Y starting position for the top left corner of video
 var dim_end = [240,dim_start[1]+240]; 
-var x_change = (Math.random()*6); //sets a random scrolling speed of video 
+var x_change = ((Math.random()*5)+1); //sets a random scrolling speed of video 
 
 //movie attribue values 
 riverMovie.vol = 0;
