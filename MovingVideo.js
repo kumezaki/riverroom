@@ -3,12 +3,14 @@ inlets = 1;
 outlets = 1;
 
 var fullMatrix = new JitterMatrix(4,"char", 900, 900);
+var smallMatrix = new JitterMatrix(4,"char",240, 240);
 var riverMovie = new JitterObject("jit.qt.movie",240,240);
 
 var source_start = [0,0];
 var source_end = [480,480];
 var dim_start = [0,240];
 var dim_end = [240,480];
+var x_change = 5;
 
 //movie attribue values 
 riverMovie.vol = 0;
@@ -32,6 +34,8 @@ function read(filename)
 function bang()
 {
     fullMatrix.clear();
+     
+    riverMovie.matrixcalc(fullMatrix,smallMatrix);
 
     fullMatrix.usesrcdim = 1;
     fullMatrix.srcdimstart = source_start;
@@ -41,7 +45,15 @@ function bang()
     fullMatrix.dstdimstart = dim_start;
     fullMatrix.dstdimend = dim_end;
   
-    riverMovie.matrixcalc(fullMatrix,fullMatrix); //Changing this worked to get rid of the error messages. 
+    fullMatrix.frommatrix(smallMatrix);
+	
+    if(dim_start[0] <= 660) 
+    {dim_start[0] += x_change;
+	} else {dim_start[0] = 0}
+	if(dim_end[0] <= 900)	
+    {dim_end[0] += x_change;
+	} else{dim_end[0] = 240}
+
 
 	
     outlet(0, "jit_matrix", fullMatrix.name);
