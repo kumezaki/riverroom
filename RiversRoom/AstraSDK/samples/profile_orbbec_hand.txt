@@ -1,0 +1,28 @@
+sorted list                                                    calls       self time      total time
+<unprofiled>                                                     0.0    132 ms 2957163%    132 ms 29
+on_frame_ready                                                   0.9      4 us  100%      4 us  100%
+hand_tracker                                                     0.0      0 ns    0%      0 ns    0%
+reset                                                            0.0      0 ns    0%      0 ns    0%
+create_streams                                                   0.0      0 ns    0%      0 ns    0%
+depth_cache_get                                                  0.0      0 ns    0%      0 ns    0%
+depth_utility                                                    0.0      0 ns    0%      0 ns    0%
+~depth_utility                                                   0.1      0 ns    0%      0 ns    0%
+~point_processor                                                 0.1      0 ns    0%      0 ns    0%
+~hand_tracker                                                    0.1      0 ns    0%      0 ns    0%
+astra_depth_fetch_conversion_cache                               0.0      0 ns    0%      0 ns    0%
+point_processor                                                  0.0      0 ns    0%      0 ns    0%
+
+call tree                                                      calls       self time      total time
+<unprofiled>                                                     0.0    132 ms 2957163%    132 ms 29
+  depth_utility                                                  0.0      0 ns    0%      0 ns    0%
+    reset                                                        0.0      0 ns    0%      0 ns    0%
+  point_processor                                                0.0      0 ns    0%      0 ns    0%
+  hand_tracker                                                   0.0      0 ns    0%      0 ns    0%
+    create_streams                                               0.0      0 ns    0%      0 ns    0%
+  astra_depth_fetch_conversion_cache                             0.0      0 ns    0%      0 ns    0%
+    depth_cache_get                                              0.0      0 ns    0%      0 ns    0%
+  on_frame_ready                                                 0.9      4 us  100%      4 us  100%
+  ~hand_tracker                                                  0.1      0 ns    0%      0 ns    0%
+  ~point_processor                                               0.1      0 ns    0%      0 ns    0%
+  ~depth_utility                                                 0.1      0 ns    0%      0 ns    0%
+
