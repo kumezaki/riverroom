@@ -1,0 +1,30 @@
+BEGIN {
+	track = 0;
+	num_start_ignores = 2;
+}
+
+{
+	if (track)
+	{
+		if ($2 == "COUNT:")
+			print $0
+		if ($2 == "UPDATE:")
+			print $3,$4
+	}
+
+	if ($0 == "js: set_end  0  received!")
+	{
+		print $0,"START",num_start_ignores
+		track = (num_start_ignores-- == 0)
+		print track
+	}
+
+	if ($0 == "js: set_end  1  received!")
+	{
+		print $0,"END"
+		track = 0
+	}
+}
+
+END {
+}
