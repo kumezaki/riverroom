@@ -1,6 +1,18 @@
 {
 	"boxes" : [ 		{
 			"box" : 			{
+				"maxclass" : "comment",
+				"text" : "'esc' toggles between fullscreen",
+				"patching_rect" : [ 260.0, 94.0, 179.0, 20.0 ],
+				"numinlets" : 1,
+				"id" : "obj-11",
+				"numoutlets" : 0,
+				"style" : ""
+			}
+
+		}
+, 		{
+			"box" : 			{
 				"maxclass" : "jit.pwindow",
 				"patching_rect" : [ 52.0, 230.0, 454.0, 286.0 ],
 				"numinlets" : 1,
