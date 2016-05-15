@@ -9,8 +9,8 @@ function set_cue(key)
 			messnamed("gain_msg",-24.);
 			messnamed("gate_msg",0);
 			messnamed("clock_msg","stop");
-			messnamed("main_win_br_msg",0.);
-			messnamed("sub_win_br_msg",1.);
+			messnamed("rr_main_win_fade_msg",0.);
+			messnamed("rr_sub_win_fade_msg",1.);
 			messnamed("3_tagname_msg","riversroom.com",-0.8,1.0);
 			break;
 		case 49: // 1
@@ -18,8 +18,8 @@ function set_cue(key)
 			messnamed("gain_msg",-10.,10000);
 			messnamed("gate_msg",1);
 			messnamed("clock_msg","start");
-			messnamed("main_win_br_msg",1.,10000);
-			messnamed("sub_win_br_msg",1.);
+			messnamed("rr_main_win_fade_msg",1.,10000);
+			messnamed("rr_sub_win_fade_msg",1.);
 			messnamed("3_tagname_msg","riversroom.com",-0.8,1.0);
 			break;
 		case 50: // 2
@@ -27,8 +27,8 @@ function set_cue(key)
 			messnamed("gain_msg",-10.);
 			messnamed("gate_msg",1);
 			messnamed("clock_msg","stop");
-			messnamed("main_win_br_msg",1.);
-			messnamed("sub_win_br_msg",1.);
+			messnamed("rr_main_win_fade_msg",1.);
+			messnamed("rr_sub_win_fade_msg",1.);
 			messnamed("3_tagname_msg","",-0.8,1.0);
 			break;
 		default:

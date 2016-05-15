@@ -5,18 +5,18 @@ outlets = 3;
 var orientation = 0;
 
 var num_droplets = 0;
+var num_displays = 1;
 
 var pos_mat;
 var scaled_pos_mat;
-var y_range = 1.;	/* used only for x (0) orientation */
+var spread = 1.;	/* currently used only for x (0) orientation */
 
 var speed_mat;
 var speed_min = 0.;
 var speed_range = 0.;
 
 var scale_mat;
-var scale = 1.;
-var num_displays = 1;
+var scale = 0.;
 
 var off = -1;
 
@@ -27,7 +27,7 @@ var scale_expr = new JitterObject("jit.expr");
 function init_pos_x()
 {
 	for (i = 0; i < num_droplets; i++)
-		pos_mat.setcell1d(i,-1,Math.random()*(2.*y_range)-y_range,0.);
+		pos_mat.setcell1d(i,-1,Math.random()*(2.*spread)-spread,0.);
 }
 
 function init_pos_z()
@@ -75,8 +75,14 @@ function init_scale()
 
 function init()
 {
+	set_exprs();
+	
+	set_params();
+	
 	init_pos();
+	
 	init_speed();
+	
 	init_scale();
 }
 
@@ -129,23 +135,42 @@ function set_exprs()
 	}
 }
 
+function set_params()
+{
+	switch (orientation)
+	{
+		case 0: // x
+			speed_min = 0.001;
+			speed_range = 0.002;
+			scale = 0.05;
+			spread = 0.2;
+			break;
+		case 2: // z
+			speed_min = 0.01;
+			speed_range = 0.01;
+			scale = 0.15;
+			spread = 1.0;
+			break;
+		default:
+			post("WARNING: unknown orientation\n");
+	}
+}
+
 function set_orientation(v)
 {
 	orientation = v;
 	
-	set_exprs();
-	
 	init();
-}
-
-function set_y_range(v)
-{
-	y_range = v;
 }
 
 function set_num_droplets(v)
 {
 	num_droplets = v;
+}
+
+function set_num_displays(v)
+{
+	num_displays = v;
 }
 
 function set_off(v)
@@ -156,24 +181,6 @@ function set_off(v)
 		set_exprs();
 		init_pos();
 	}
-}
-
-function set_scale(v)
-{
-	scale = v;
-	init_scale();
-}
-
-function set_num_displays(v)
-{
-	num_displays = v;
-}
-
-function set_speed(min,range)
-{
-	speed_min = min;
-	speed_range = range;
-	init_speed();
 }
 
 function bang()
