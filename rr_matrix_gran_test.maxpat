@@ -292,8 +292,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -873,8 +873,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1422,8 +1422,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1958,8 +1958,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2339,7 +2339,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 394.0, 374.5, 315.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r2_texture_snd_msg open arakawa_00001.mp4.aif"
+									"text" : ";\r0_texture_snd_msg open mississippi_00002.mp4.aif"
 								}
 
 							}
@@ -2498,7 +2498,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 292.5, 140.5, 315.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r2_multiple_msg 0"
+									"text" : ";\r1_multiple_msg 1"
 								}
 
 							}
@@ -2551,7 +2551,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 33.0, 374.5, 339.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r2_texture_mov_msg asyncread arakawa_00001.mp4.mov"
+									"text" : ";\r0_texture_mov_msg asyncread mississippi_00002.mp4.mov"
 								}
 
 							}
@@ -2843,8 +2843,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3424,7 +3424,7 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 363.5, 588.0, 136.0, 48.0 ],
-					"presentation_rect" : [ 30.0, 30.0, 50.0, 48.0 ],
+					"presentation_rect" : [ 30.0, 30.0, 50.0, 34.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~[1]",
@@ -4030,8 +4030,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
