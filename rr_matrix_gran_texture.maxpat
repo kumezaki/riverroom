@@ -133,9 +133,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 71.0, 267.0, 270.0, 22.0 ],
+					"patching_rect" : [ 71.0, 267.0, 300.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.gl.texture rr @name #1_rr_tex @apply replace"
+					"text" : "jit.gl.texture rr_main @name #1_rr_tex @apply replace"
 				}
 
 			}
@@ -278,8 +278,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

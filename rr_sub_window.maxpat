@@ -136,7 +136,7 @@
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 285.0, 269.0, 216.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.gl.text rr_text @fontsize #2 @align 1"
+					"text" : "jit.gl.text rr_sub @fontsize #2 @align 1"
 				}
 
 			}
@@ -226,8 +226,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
