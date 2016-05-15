@@ -355,7 +355,7 @@
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 210.5, 39.0, 624.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.gl.gridshape rr_main @lighting_enable 1 @name #1_rr_shape @automatic 0 @texture #2_rr_tex @shape plane"
+					"text" : "jit.gl.gridshape rr_main @lighting_enable 0 @name #1_rr_shape @automatic 0 @texture #2_rr_tex @shape plane"
 				}
 
 			}

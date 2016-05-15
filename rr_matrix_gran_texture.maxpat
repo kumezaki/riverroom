@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 666.0, 352.0, 405.0, 354.0 ],
+		"rect" : [ 666.0, 352.0, 423.0, 276.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -133,7 +133,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 71.0, 267.0, 300.0, 22.0 ],
+					"patching_rect" : [ 71.0, 202.0, 300.0, 22.0 ],
 					"style" : "",
 					"text" : "jit.gl.texture rr_main @name #1_rr_tex @apply replace"
 				}
@@ -278,8 +278,8 @@
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
