@@ -1,6 +1,6 @@
 autowatch = 1;
 
-outlets = 3;
+outlets = 4;
 
 var orientation = 0;
 
@@ -15,6 +15,8 @@ var speed_mat;
 var speed_min = 0.;
 var speed_range = 0.;
 
+var speed_gate_mat;
+
 var scale_mat;
 var scale = 0.;
 
@@ -23,6 +25,9 @@ var off = -1;
 var update_expr = new JitterObject("jit.expr");
 
 var scale_expr = new JitterObject("jit.expr");
+
+var speed_gate_op = new JitterObject("jit.op");
+speed_gate_op.op = "*";
 
 function init_pos_x()
 {
@@ -57,9 +62,13 @@ function init_pos()
 function init_speed()
 {
 	speed_mat = new JitterMatrix(1, "float32", num_droplets, 1);
+	speed_gate_mat = new JitterMatrix(1, "float32", num_droplets, 1);
 
 	for (i = 0; i < num_droplets; i++)
+	{
 		speed_mat.setcell1d(i,Math.random()*speed_range+speed_min);
+		speed_gate_mat.setcell1d(i,1.);
+	}
 }
 
 function init_scale()
@@ -183,12 +192,51 @@ function set_off(v)
 	}
 }
 
+function update_gate_matrix()
+{
+	var num_zones = 32;
+	var zone_mat = new JitterMatrix(1, "float32", num_zones, 1);
+	for (i = 0; i < num_zones; i++)
+		zone_mat.setcell1d(i,((i+0.5)/num_zones)*2.-1.);
+	var diff_thresh_mat = new JitterMatrix(1, "float32", 1, 1);
+	diff_thresh_mat.setall(1. / num_zones * 0.5 * 2.);
+
+	var droplet_pos_mat = new JitterMatrix(1, "float32", num_zones, 1);
+	var capture_mat = new JitterMatrix(1, "float32", num_zones, 1);
+	var expr_obj = new JitterObject("jit.expr");
+
+	for (i = 0; i < num_droplets; i++)
+	{
+		var droplet_pos = pos_mat.getcell(i)[orientation]; /* need to get the actual value here */
+		droplet_pos_mat.setall(droplet_pos);
+		expr_obj.expr = "absdiff(in[0],in[1])<in[2]";
+		expr_obj.matrixcalc([droplet_pos_mat,zone_mat,diff_thresh_mat],capture_mat);
+	}
+	outlet(3,"jit_matrix",capture_mat.name);
+	
+	for (i = 0; i < num_droplets; i++)
+	{
+		v = speed_gate_mat.getcell(i);
+		speed_gate_mat.setcell1d(i,Math.random()<(v==0.?0.03:0.01)?1.-v:v);
+	}
+}
+
 function bang()
 {
+	/* output positions */
 	outlet(0,"jit_matrix",pos_mat.name);
 
+	/* output scaled positions */
 	scale_expr.matrixcalc(pos_mat,scaled_pos_mat);
 	outlet(1,"jit_matrix",scaled_pos_mat.name);
 
-	update_expr.matrixcalc([pos_mat,speed_mat],pos_mat);
+	/* update gate matrix */
+	update_gate_matrix();
+
+	/* create gated speed matrix for updating positions */
+	var delta_pos_mat = new JitterMatrix(1, "float32", num_droplets, 1);
+	speed_gate_op.matrixcalc([speed_mat,speed_gate_mat],delta_pos_mat);
+	
+	/* update positions */
+	update_expr.matrixcalc([pos_mat,delta_pos_mat],pos_mat);
 }

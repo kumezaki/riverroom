@@ -292,8 +292,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -431,7 +431,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-45",
@@ -944,8 +943,8 @@
 										"styles" : [ 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1380,8 +1379,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1929,8 +1928,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2465,8 +2464,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2846,7 +2845,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 394.0, 374.5, 315.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r1_texture_snd_msg open mississippi_00002.mp4.aif"
+									"text" : ";\r2_texture_snd_msg open mississippi_00002.mp4.aif"
 								}
 
 							}
@@ -3005,7 +3004,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 292.5, 140.5, 315.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r0_multiple_msg 1"
+									"text" : ";\r1_multiple_msg 1"
 								}
 
 							}
@@ -3058,7 +3057,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 33.0, 374.5, 339.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r1_texture_mov_msg asyncread mississippi_00002.mp4.mov"
+									"text" : ";\r2_texture_mov_msg asyncread mississippi_00002.mp4.mov"
 								}
 
 							}
@@ -3350,8 +3349,8 @@
 						"styles" : [ 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3931,7 +3930,7 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 363.5, 588.0, 136.0, 48.0 ],
-					"presentation_rect" : [ 30.0, 30.0, 50.0, 34.0 ],
+					"presentation_rect" : [ 30.0, 30.0, 50.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~[1]",
@@ -4538,13 +4537,17 @@
 				"name" : "jit.+.mxo",
 				"type" : "iLaX"
 			}
+, 			{
+				"name" : "jit.*.mxo",
+				"type" : "iLaX"
+			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
