@@ -1,6 +1,8 @@
 autowatch = 1;
 
-outlets = 4;
+outlets = 3;
+
+var glob = new Global("my_glob");
 
 var orientation = 0;
 
@@ -192,8 +194,6 @@ function set_off(v)
 	}
 }
 
-var glob = new Global("my_glob");
-
 function update_gate_matrix()
 {
 	var droplet_pos_mat = new JitterMatrix(1, "float32", glob.num_zones, 1);
@@ -214,8 +214,6 @@ function update_gate_matrix()
 			if (temp_mat.getcell(j) != 0.) { gate = 0.; break; }
 		speed_gate_mat.setcell1d(i,gate);
 	}
-
-	outlet(3,"jit_matrix",glob.zone_on_mat.name);
 }
 
 function bang()
