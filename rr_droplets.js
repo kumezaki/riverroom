@@ -192,33 +192,30 @@ function set_off(v)
 	}
 }
 
+var glob = new Global("my_glob");
+
 function update_gate_matrix()
 {
-	var num_zones = 32;
-	var zone_mat = new JitterMatrix(1, "float32", num_zones, 1);
-	for (i = 0; i < num_zones; i++)
-		zone_mat.setcell1d(i,((i+0.5)/num_zones)*2.-1.);
-	var diff_thresh_mat = new JitterMatrix(1, "float32", 1, 1);
-	diff_thresh_mat.setall(1. / num_zones * 0.5 * 2.);
+	var droplet_pos_mat = new JitterMatrix(1, "float32", glob.num_zones, 1);
 
-	var droplet_pos_mat = new JitterMatrix(1, "float32", num_zones, 1);
-	var capture_mat = new JitterMatrix(1, "float32", num_zones, 1);
+	var temp_mat = new JitterMatrix(1, "float32", glob.num_zones, 1);
+
 	var expr_obj = new JitterObject("jit.expr");
 
 	for (i = 0; i < num_droplets; i++)
 	{
-		var droplet_pos = pos_mat.getcell(i)[orientation]; /* need to get the actual value here */
-		droplet_pos_mat.setall(droplet_pos);
-		expr_obj.expr = "absdiff(in[0],in[1])<in[2]";
-		expr_obj.matrixcalc([droplet_pos_mat,zone_mat,diff_thresh_mat],capture_mat);
+		droplet_pos_mat.setall(pos_mat.getcell(i)[orientation]);
+
+		expr_obj.expr = "in[0]&&absdiff(in[1],in[2])<in[3]";
+		expr_obj.matrixcalc([glob.zone_on_mat,droplet_pos_mat,glob.zone_mat,glob.diff_thresh_mat],temp_mat);
+
+		gate = 1.;
+		for (j = 0; j < glob.num_zones; j++)
+			if (temp_mat.getcell(j) != 0.) { gate = 0.; break; }
+		speed_gate_mat.setcell1d(i,gate);
 	}
-	outlet(3,"jit_matrix",capture_mat.name);
-	
-	for (i = 0; i < num_droplets; i++)
-	{
-		v = speed_gate_mat.getcell(i);
-		speed_gate_mat.setcell1d(i,Math.random()<(v==0.?0.03:0.01)?1.-v:v);
-	}
+
+	outlet(3,"jit_matrix",glob.zone_on_mat.name);
 }
 
 function bang()
