@@ -8,11 +8,12 @@ var cornerY = 480;
 var videoH = 240;
 var videoW = 240;
 
-// KU: figure out how to go full screen
 var fullMatrix = new JitterMatrix(4,"char", 900, 900);
 var smallMatrix = new JitterMatrix(4,"char",videoH, videoW);
  
-var numMovies = 3; // AC: Set to the total number of .mp4s 
+var numMovies = 3; // AC: Set to the total number of .mp4s
+var txtFile = "MovieFileNames.txt";
+var file = new File(txtFile); 
 
 var riverMovie = new Array;
 
@@ -34,21 +35,20 @@ function init_float_array_random()
 }
 
 function loadbang()
-{
-	// KU: the trickiest part is going to be reading different movie file names
-	// KU: I think what I'd like to do is read file names from a text file
-	// KU: I'll show you an example of this, but please email me to remind me to do this
+{	
+	var moviename = new Array;
+	file.open(txtFile);
+       
+	for (i = 0; i < numMovies; i++){
+		
+		moviename[i] = file.readline() + "\n";
+		post("MovieName" + " " + moviename[i]);
+		riverMovie[i] = new JitterObject("jit.movie");
+		riverMovie[i].read(moviename[i]); //I can't figure out how to get this moviename variable to read into the jit.movie properly
+		riverMovie[i].vol = 0.;
+  	}
 	
-	// open MovieFileNames.txt file here
-  for (i = 0; i < numMovies; i++)
-  {
-  	// read next line from MovieFileNames.txt here into a variable (e.g. filename);
-	riverMovie[i] = new JitterObject("jit.movie");
-	riverMovie[i].read("sumidagawa_00001.mp4"); // KU: remember I changed this to .mp4
-	riverMovie[i].vol = 0.;
-  }
-  // close MovieFileNames.txt file here
-
+	file.close();
 	init_float_array_random();
 }
 
@@ -88,9 +88,4 @@ function bang()
   }
 
 	 outlet(0, "jit_matrix", fullMatrix.name);
-}
-
-function fullscreen(v)
-{
-	videoWindow.fullscreen = v;
 }
