@@ -33,22 +33,22 @@
 #define PORT_OUT 7101
 
 const int w{32}, h{w/4*3};
+
 #define OUTPUT_BUFFER_SIZE (w * h * sizeof(int32_t) + 1024)
 
-class DepthFrameListener : public astra::FrameListener, public UdpTransmitSocket, public osc::OscPacketListener
+float rel_h_min{0.};
+float rel_h_max{1.};
+
+class OSCListener : public osc::OscPacketListener
 {
 public:
 
-	DepthFrameListener()
-		: UdpTransmitSocket(IpEndpointName( ADDRESS, PORT_OUT )),
-			p( (char*)buffer, OUTPUT_BUFFER_SIZE )
+	OSCListener()
 	{
 		UdpListeningReceiveSocket s(IpEndpointName( IpEndpointName::ANY_ADDRESS, PORT_IN ), this );
 		std::cout << "press ctrl-c to end\n";
 		s.RunUntilSigInt();
 	}
-
-	bool is_finished() const { return isFinished_; }
 
 protected:
 
@@ -56,24 +56,37 @@ protected:
     {
         try
         {
-            if ( std::strcmp( m.AddressPattern(), "/astral/rel_h" ) == 0 )
+            if ( std::strcmp( m.AddressPattern(), "/astra/rel_h" ) == 0 )
             {
                 osc::ReceivedMessageArgumentStream args = m.ArgumentStream();
 
                 args >> rel_h_min >> rel_h_max >> osc::EndMessage;
                 
-                std::cout << "received '/astral/rel_h' message with arguments: " << rel_h_min << " " << rel_h_max << "\n";
-
-				h_start = rel_h_min * h;
-				h_end = rel_h_max * h;
+                std::cout << "received '/astra/rel_h' message with arguments: " << rel_h_min << " " << rel_h_max << "\n";
             }
         }
         catch( osc::Exception& e )
         {
             std::cout << "error while parsing message: " << m.AddressPattern() << ": " << e.what() << "\n";
         }
-    }
-    
+    }    
+};
+
+class DepthFrameListener : public astra::FrameListener, public UdpTransmitSocket
+{
+public:
+
+	DepthFrameListener(const char* _osc_add_depth)
+		: UdpTransmitSocket(IpEndpointName( ADDRESS, PORT_OUT )),
+			p( (char*)buffer, OUTPUT_BUFFER_SIZE ),
+			osc_add_depth(_osc_add_depth)
+	{
+		h_start = rel_h_min * h;
+		h_end = rel_h_max * h;
+	}
+
+	bool is_finished() const { return isFinished_; }
+
 private:
 
 	void on_frame_ready(astra::StreamReader& reader, astra::Frame& frame) override
@@ -109,7 +122,7 @@ private:
 	{
 		/* matrix dimensions */
 		p.Clear();
-		p << osc::BeginMessage( "/astral/dim" );
+		p << osc::BeginMessage( "/astra/dim" );
 		p << (int32_t)w << (int32_t)(h_end-h_start);
 		p << osc::EndMessage;
 
@@ -117,7 +130,7 @@ private:
 
 		/* matrix data */
 		p.Clear();
-		p << osc::BeginMessage( "/astral/depth" );
+		p << osc::BeginMessage( osc_add_depth );
 		
 		const int w_frame = depthFrame.width();
 		const int w_skip = depthFrame.width() / w;
@@ -153,30 +166,40 @@ private:
 	osc::OutboundPacketStream p;
 	char buffer[OUTPUT_BUFFER_SIZE];
 
-	float rel_h_min{0.};
-	float rel_h_max{1.};
 	int h_start{0};
 	int h_end{h};
+	
+	const char* osc_add_depth{NULL};
 };
 
 int main(int argc, char** arvg)
 {
+	OSCListener osc_listener;
+	
 	astra::initialize();
 
-	astra::StreamSet streamSet;
-	astra::StreamReader reader = streamSet.create_reader();
+    set_key_handler();
 
-	reader.stream<astra::DepthStream>().start();
+    astra::StreamSet streamSet1("device/sensor0");
+    astra::StreamSet streamSet2("device/sensor1");
+    astra::StreamReader reader1 = streamSet1.create_reader();
+    astra::StreamReader reader2 = streamSet2.create_reader();
 
-	DepthFrameListener listener;
+	reader1.stream<astra::DepthStream>().start();
+	reader2.stream<astra::DepthStream>().start();
 
-	reader.add_listener(listener);
+	DepthFrameListener listener1("/astra/depth/0");
+	DepthFrameListener listener2("/astra/depth/1");
+
+	reader1.add_listener(listener1);
+	reader2.add_listener(listener2);
 
 	do {
 		astra_temp_update();
-	} while (!listener.is_finished());
+	} while (shouldContinue);
 
-	reader.remove_listener(listener);
+	reader1.remove_listener(listener1);
+	reader2.remove_listener(listener2);
 
 	astra::terminate();
 
