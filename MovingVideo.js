@@ -40,11 +40,10 @@ function loadbang()
 	file.open(txtFile);
        
 	for (i = 0; i < numMovies; i++){
-		
 		moviename[i] = file.readline(1024);
 		post("MovieName" + " " + moviename[i] + "\n");
 		riverMovie[i] = new JitterObject("jit.movie");
-		riverMovie[i].read(moviename[i]); //I can't figure out how to get this moviename variable to read into the jit.movie properly
+		riverMovie[i].read(moviename[i]);
 		riverMovie[i].vol = 0.;
 		riverMovie[i].engine = "avf";
   	}
