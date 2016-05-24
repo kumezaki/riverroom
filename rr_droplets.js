@@ -206,7 +206,8 @@ function update_gate_matrix()
 	{
 		droplet_pos_mat.setall(pos_mat.getcell(i)[orientation]);
 
-		expr_obj.expr = "in[0]&&absdiff(in[1],in[2])<in[3]";
+//		expr_obj.expr = "in[0]&&absdiff(in[1],in[2])<in[3]";
+		expr_obj.expr = "in[0]*absdiff(in[1],in[2])<in[3]";
 		expr_obj.matrixcalc([glob.zone_on_mat,droplet_pos_mat,glob.zone_mat,glob.diff_thresh_mat],temp_mat);
 
 		gate = 1.;

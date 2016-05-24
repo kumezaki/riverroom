@@ -21,7 +21,8 @@ function jit_matrix(matrix_name)
 		for (j = 0; j < mat_in.dim[1]; j++)
 			t += parseInt(mat_in.getcell(i,j));
 		t /= mat_in.dim[1];
-		gMatrix_Out.setcell1d(i,t<gThresh?0:1);
+//		gMatrix_Out.setcell1d(i,t<gThresh?0:1);
+		gMatrix_Out.setcell1d(i,t<gThresh?0:t);
 	}
 
 	outlet(0,"jit_matrix",gMatrix_Out.name);
