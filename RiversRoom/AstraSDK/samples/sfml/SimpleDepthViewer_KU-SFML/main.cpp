@@ -32,6 +32,8 @@
 #define PORT_IN 7100
 #define PORT_OUT 7101
 
+char ip_add[128];
+
 const int w{32}, h{w/4*3};
 
 #define OUTPUT_BUFFER_SIZE (w * h * sizeof(int32_t) + 1024)
@@ -77,7 +79,7 @@ class DepthFrameListener : public astra::FrameListener, public UdpTransmitSocket
 public:
 
 	DepthFrameListener(const char* _osc_add_depth)
-		: UdpTransmitSocket(IpEndpointName( ADDRESS, PORT_OUT )),
+		: UdpTransmitSocket(IpEndpointName( ip_add, PORT_OUT )),
 			p( (char*)buffer, OUTPUT_BUFFER_SIZE ),
 			osc_add_depth(_osc_add_depth)
 	{
@@ -172,8 +174,11 @@ private:
 	const char* osc_add_depth{NULL};
 };
 
-int main(int argc, char** arvg)
+int main(int argc, char** argv)
 {
+	strcpy(ip_add,argc==2?argv[1]:ADDRESS);
+	printf("setting IP address to %s\n",ip_add);
+		
 	OSCListener osc_listener;
 	
 	astra::initialize();

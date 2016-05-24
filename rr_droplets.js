@@ -153,8 +153,8 @@ function set_params()
 		case 0: // x
 			speed_min = 0.001;
 			speed_range = 0.002;
-			scale = 0.05;
-			spread = 0.2;
+			scale = 0.2;
+			spread = 0.4;
 			break;
 		case 2: // z
 			speed_min = 0.01;
