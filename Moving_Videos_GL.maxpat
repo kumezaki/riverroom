@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 451.0, 115.0, 640.0, 480.0 ],
+		"rect" : [ 81.0, 105.0, 873.0, 634.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,32 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_matrix", "" ],
+					"patching_rect" : [ 348.0, 348.0, 55.0, 22.0 ],
+					"style" : "",
+					"text" : "jit.movie"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_matrix", "" ],
+					"patching_rect" : [ 342.0, 269.0, 93.0, 22.0 ],
+					"style" : "",
+					"text" : "jit.gl.videoplane"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "comment",
@@ -239,7 +265,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "MovingGL.js",
-				"bootpath" : "~/Documents/UC_Irvine/Work_Ko/River_Room/Jitter",
+				"bootpath" : "~/Desktop/riverroom",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

@@ -26,7 +26,7 @@ var initY = new Array;
 var changeX = new Array;
 var videoX = new Array;
 
-var mylistener = new JitterListener(KoRocks.getregisteredname(), thecallback);
+//var mylistener = new JitterListener(KoRocks.getregisteredname(), thecallback);
 
 function init_float_array_random()
 {
@@ -40,10 +40,14 @@ function init_float_array_random()
 	}
 }
 
+var movieplane = new Array;
+
 function loadbang()
-{	
+{
+	init_float_array_random();
+
 	var moviename = new Array;
-	var movieplane = new Araray;
+
 	file.open(txtFile);
        
 	for (i = 0; i < numMovies; i++){
@@ -54,28 +58,30 @@ function loadbang()
 		riverMovie[i].vol = 0.;
 		riverMovie[i].engine = "avf";
 		movieplane[i] = new JitterObject("jit.gl.videoplane","movingvideos");
+		movieplane[i].drawto = "movingvideos";
 		movieplane[i].scale = [0.25,0.25,1.];
         movieplane[i].position = [0.,initY[i],0.];
   	}
 	
 	file.close();
-	init_float_array_random();
 }
 
 function bang()
 {
-
-  
-	 
   for (i = 0; i < numMovies; i++)
   {
     riverMovie[i].matrixcalc(smallMatrix,smallMatrix);
-    movieplane[i].matriccalc(smallMatrix,smallMatrix);
+    movieplane[i].matrixcalc(smallMatrix,smallMatrix);
   
     fullMatrix.frommatrix(smallMatrix);
+	}
 }
 
 function fullscreen(v)
 {
 	KoRocks.fullscreen = v;
+}
+
+function thecallback()
+{
 }
