@@ -26,15 +26,7 @@ var initY = new Array;
 var changeX = new Array;
 var videoX = new Array;
 
-<<<<<<< Updated upstream
-//var mylistener = new JitterListener(KoRocks.getregisteredname(), thecallback);
-=======
-<<<<<<< HEAD
-var mylistener = new JitterListener(movingvideos.getregisteredname()); //don't fully understand this
-=======
-//var mylistener = new JitterListener(KoRocks.getregisteredname(), thecallback);
->>>>>>> origin/master
->>>>>>> Stashed changes
+//var mylistener = new JitterListener(movingvideos.getregisteredname()); //don't fully understand this
 
 function init_float_array_random()
 {
