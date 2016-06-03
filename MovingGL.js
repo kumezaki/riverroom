@@ -1,9 +1,9 @@
 autowatch = 1;
 inlets = 1;
 
-var KoRocks = new JitterObject("jit.window","movingvideos");
-KoRocks.depthbuffer = 0;
-KoRocks.idelmouse = 1;
+var movingvideos = new JitterObject("jit.window","movingvideos");
+movingvideos.depthbuffer = 0;
+movingvideos.idelmouse = 1;
 
 var myrender = new JitterObject("jit.gl.render","movingvideos");
 myrender.ortho = 2;
@@ -16,7 +16,7 @@ var fullMatrix = new JitterMatrix(4,"char", 900, 900);
 var smallMatrix = new JitterMatrix(4,"char",videoH, videoW);
 
  
-var numMovies = 3; // AC: Set to the total number of .mp4s
+var numMovies = 3; // AC: Set to the total number of videos
 var txtFile = "MovieFileNames.txt";
 var file = new File(txtFile); 
 
@@ -26,7 +26,15 @@ var initY = new Array;
 var changeX = new Array;
 var videoX = new Array;
 
+<<<<<<< Updated upstream
 //var mylistener = new JitterListener(KoRocks.getregisteredname(), thecallback);
+=======
+<<<<<<< HEAD
+var mylistener = new JitterListener(movingvideos.getregisteredname()); //don't fully understand this
+=======
+//var mylistener = new JitterListener(KoRocks.getregisteredname(), thecallback);
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 
 function init_float_array_random()
 {
@@ -60,7 +68,7 @@ function loadbang()
 		movieplane[i] = new JitterObject("jit.gl.videoplane","movingvideos");
 		movieplane[i].drawto = "movingvideos";
 		movieplane[i].scale = [0.25,0.25,1.];
-        movieplane[i].position = [0.,initY[i],0.];
+        movieplane[i].position = [0.,initY[i],0.]; //I know this isn't quite right
   	}
 	
 	file.close();
@@ -79,7 +87,11 @@ function bang()
 
 function fullscreen(v)
 {
-	KoRocks.fullscreen = v;
+	movingvideos.fullscreen = v;
+}
+
+function thecallback()
+{
 }
 
 function thecallback()

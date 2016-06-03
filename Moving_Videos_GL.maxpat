@@ -38,32 +38,6 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-5",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 348.0, 348.0, 55.0, 22.0 ],
-					"style" : "",
-					"text" : "jit.movie"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 342.0, 269.0, 93.0, 22.0 ],
-					"style" : "",
-					"text" : "jit.gl.videoplane"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -265,7 +239,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "MovingGL.js",
-				"bootpath" : "~/Desktop/riverroom",
+				"bootpath" : "~/Documents/UC_Irvine/Work_Ko/River_Room/riverroom",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
