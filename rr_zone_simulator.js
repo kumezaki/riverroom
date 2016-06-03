@@ -30,11 +30,11 @@ function set_enable(v)
 function set_zone_mat_0()
 {
 	for (i = 0; i < 32; i++)
-		glob.zone_on_mat.setcell1d(i+32,arguments[i]);
+		glob.zone_on_mat.setcell1d(i+0,arguments[i]);
 }
 
 function set_zone_mat_1()
 {
 	for (i = 0; i < 32; i++)
-		glob.zone_on_mat.setcell1d(i+0,arguments[i]);
+		glob.zone_on_mat.setcell1d(i+32,arguments[i]);
 }

@@ -3,7 +3,7 @@ autowatch = 1;
 var orientation = 0;
 
 var main_win = [];
-main_win[0] = { ortho : 2, coeff_source : 0.01, coeff_feedback : 0.85 }
+main_win[0] = { ortho : 2, coeff_source : 0.15, coeff_feedback : 0.85 }
 main_win[2] = { ortho : 0, coeff_source : 0.15, coeff_feedback : 0.85 }
 
 var sub_win = [];

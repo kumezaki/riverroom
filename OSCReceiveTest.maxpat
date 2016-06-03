@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 104.0, 90.0, 1028.0, 605.0 ],
+		"rect" : [ 61.0, 79.0, 654.0, 645.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,13 +39,14 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-11",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 824.0, 454.0, 66.0, 22.0 ],
+					"patching_rect" : [ 824.0, 454.0, 66.0, 35.0 ],
 					"style" : "",
-					"text" : "127.0.0.1"
+					"text" : "169.234.104.148"
 				}
 
 			}
@@ -72,7 +73,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 871.0, 363.0, 100.0, 50.0 ],
 					"style" : "",
-					"text" : "127.0.0.1"
+					"text" : "169.234.104.148"
 				}
 
 			}
@@ -98,7 +99,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 35.0, 378.0, 142.0, 22.0 ],
 					"style" : "",
-					"text" : "r my_matrix1_zone_msg"
+					"text" : "r my_matrix0_zone_msg"
 				}
 
 			}
@@ -111,7 +112,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 357.0, 378.0, 142.0, 22.0 ],
 					"style" : "",
-					"text" : "r my_matrix0_zone_msg"
+					"text" : "r my_matrix1_zone_msg"
 				}
 
 			}
@@ -838,13 +839,13 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "OSCReceiveTest_3DCam.maxpat",
-				"bootpath" : "~/Desktop/riverroom/RiversRoom",
+				"bootpath" : "~/Desktop/riverroom",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "OSCReceiveTest.js",
-				"bootpath" : "~/Desktop/riverroom/RiversRoom",
+				"bootpath" : "~/Desktop/riverroom",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

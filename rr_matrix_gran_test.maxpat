@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1054.0, 630.0 ],
+		"rect" : [ 34.0, 79.0, 827.0, 630.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -134,13 +134,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-12",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 231.0, 267.0, 66.0, 22.0 ],
+									"patching_rect" : [ 231.0, 267.0, 66.0, 35.0 ],
 									"style" : "",
-									"text" : "127.0.0.1"
+									"text" : "169.234.104.148"
 								}
 
 							}
@@ -167,7 +168,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 278.0, 176.0, 100.0, 50.0 ],
 									"style" : "",
-									"text" : "127.0.0.1"
+									"text" : "169.234.104.148"
 								}
 
 							}
@@ -2329,6 +2330,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-23",
@@ -2364,7 +2366,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 725.833313, 25.0, 142.0, 22.0 ],
 									"style" : "",
-									"text" : "r my_matrix0_zone_msg"
+									"text" : "r my_matrix1_zone_msg"
 								}
 
 							}
@@ -2389,7 +2391,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 402.833313, 25.0, 142.0, 22.0 ],
 									"style" : "",
-									"text" : "r my_matrix1_zone_msg"
+									"text" : "r my_matrix0_zone_msg"
 								}
 
 							}
@@ -4453,7 +4455,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 394.0, 374.5, 315.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r1_texture_snd_msg open colorado_00000.mp4.aif"
+									"text" : ";\r1_texture_snd_msg open Brucebruce_00002.mp4.aif"
 								}
 
 							}
@@ -4665,7 +4667,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 33.0, 374.5, 339.0, 35.0 ],
 									"style" : "",
-									"text" : ";\r1_texture_mov_msg asyncread colorado_00000.mp4.mov"
+									"text" : ";\r1_texture_mov_msg asyncread Brucebruce_00002.mp4.mov"
 								}
 
 							}
@@ -6132,15 +6134,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-66", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-78", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -6272,6 +6265,10 @@
 			}
 , 			{
 				"name" : "jit.+.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit.*.mxo",
 				"type" : "iLaX"
 			}
  ],
