@@ -23,6 +23,7 @@ var movieplane = new Array;
 var initY = new Array;
 var changeX = new Array;
 var videoX = new Array;
+var videoZ = new Array;
 
 function init_float_array_random()
 {
@@ -30,8 +31,15 @@ function init_float_array_random()
 	{
 	   initY[i] = (Math.random()*(-1))+Math.random();
        post("Y pos" + "" + initY[i] + "\n");
-	   changeX[i] = Math.random()*0.25; 
-	   videoX[i] = -1.5; 
+	   changeX[i] = Math.random()*0.1;
+       if (changeX[i] < 0.01)
+       {
+	    changeX[i] = 0.01;
+       }
+	   post("ChangeX" + "" + changeX[i] + "\n");
+	   videoX[i] = -2.;
+	   videoZ[i] = 0;
+       
 	}
 }
 
@@ -52,22 +60,37 @@ function loadbang()
 		riverMovie[i].engine = "avf";
 		movieplane[i] = new JitterObject("jit.gl.videoplane",context_name);
 		movieplane[i].scale = [0.25,0.25,1.];
-        movieplane[i].position = [videoX[i],initY[i],0.];
   	}
 	
 	file.close();
 }
 
+function Number(v)
+{
+	numMovies = v;
+}
+
+
 function bang()
 {
+
   for (i = 0; i < numMovies; i++)
   {
     riverMovie[i].matrixcalc(mymoviemat,mymoviemat);
     movieplane[i].jit_matrix(mymoviemat.name);
-	}
-	
-//	movieplane[i].position = [changeX[i]
-    myrender.erase(); // erase the drawing context
+    movieplane[i].position = [videoX[i],initY[i],videoZ[i]];	
+   
+   	if (videoX[i] <= 2.)
+   	{
+		videoX[i] += changeX[i];
+   	}
+   	else
+   	{
+		videoX[i] = -2.;
+   	}	
+   }
+    
+    myrender.erase();
 	myrender.drawclients(); // draw the client objects
 	myrender.swap(); // swap in the new drawing
 }
