@@ -4,6 +4,7 @@ inlets = 1;
 var context_name = "MovingVideos";
 
 var mywindow = new JitterObject("jit.window",context_name);
+mywindow.size = [ 640, 360 ];
 mywindow.depthbuffer = 0;
 mywindow.idelmouse = 1;
 
@@ -31,10 +32,10 @@ function init_float_array_random()
 	{
 	   initY[i] = (Math.random()*(-1))+Math.random();
        post("Y pos" + "" + initY[i] + "\n");
-	   changeX[i] = Math.random()*0.1;
-       if (changeX[i] < 0.01)
+	   changeX[i] = Math.random()*0.01;
+       if (changeX[i] < 0.001)
        {
-	    changeX[i] = 0.01;
+	    changeX[i] = 0.001;
        }
 	   post("ChangeX" + "" + changeX[i] + "\n");
 	   videoX[i] = -2.;
